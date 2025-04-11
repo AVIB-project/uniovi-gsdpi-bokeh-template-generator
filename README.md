@@ -80,3 +80,45 @@ By default the generator create a basic python module to be serve by Bocke Serve
 ├───README                   -> application README file
 ├───requirements.txt         -> application python dependencies
 ```
+
+## Build, run and publish your docker image
+
+After finalize your proyect you can build your docker image, run and publish it. Follow these steps:
+
+Build your image for exampe
+
+```
+$ docker build -t uniovi-gsdpi-bokeh-my-app:1.0.0 .
+```
+
+Start a container from your image
+
+```
+$ docker run --rm --name uniovi-gsdpi-bokeh-my-app -p 5006:5006 uniovi-gsdpi-bokeh-my-app:1.0.0
+```
+
+If you want publish your image, tag yout image docker image to be uploaded to your docker repository
+
+```
+$ docker tag uniovi-gsdpi-bokeh-my-app:1.0.0 your-account/uniovi-gsdpi-bokeh-my-app:1.0.0
+```
+
+Finally push the docker image to your repository
+
+```
+$ docker push your-account/uniovi-gsdpi-bokeh-my-app:1.0.0
+```
+
+Open in your browser this link
+
+http://localhost:9006/prefix
+
+## An example
+Bohek template prompt
+![bokeh-template-prompt](./captures/bokeh_template_prompt.png "bokeh-template-prompt")
+
+Bokeh Login
+![bokeh-login](./captures/bokeh_login.png "bokeh-login")
+
+Bokeh sample application
+![bokeh-application](./captures/bokeh_application.png "bokeh-application")

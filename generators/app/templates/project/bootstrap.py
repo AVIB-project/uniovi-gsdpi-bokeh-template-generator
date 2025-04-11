@@ -10,7 +10,7 @@ from bokeh.command.util import build_single_handler_application
 # Bokeh Server arguments
 app = "<%= projectName %>"
 app_prefix = "<%= appPrefix %>"
-app_port = 5006
+app_port = <%= appPort %>
 app_title = "<%= appTitle %>"
 app_logo = "logo_gsdpi.png"
 app_background = "login_background.png"

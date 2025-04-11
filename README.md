@@ -1,29 +1,42 @@
 # Description
 Bokeh template generator
 
-## Instalación
+## Install template
 
-First install [Yeoman](http://yeoman.io) and the el uniovi-bokeh-template with [npm](https://www.npmjs.com/) (
-It is assumed that it is already installed [node.js](https://nodejs.org/)). 
+First install [Yeoman](http://yeoman.io) template manager. It is assumed that node is already installed [node.js](https://nodejs.org/) in your computer:
 
 ```bash
 $ npm install -g yo
+```
+
+Install the uniovi-bokeh-template from [npm](https://www.npmjs.com/):
+
+```bash
 $ npm install -g uniovi-bokeh-template
 ```
 
-For a particular version execute:
+For a particular template version:
 
 ```bash
 $ npm install -g uniovi-bokeh-template@1.0.0
 ```
+## Update template
 
-Then you can generate the new project:
+If you have already a template version and you want update it, execute this comm:
+
+```bash
+npm install -g uniovi-bokeh-template
+```
+
+## Generate your project from template
+
+Then you can generate yoour new project from template:
 
 ```bash
 $ yo uniovi-bokeh-template
 ```
 
-## Post installation
+## Post project generation
 
 Create a virtual environment and active it for your template to develop your application
 
@@ -44,71 +57,26 @@ Execute default template
 ```bash
 $ python3 bootstrap.py
 ```
+## Develop your own application
 
-Develop your application and don't forget add new dependencies to your requirements file
+By default the generator create a basic python module to be serve by Bocke Server. This application is implemented in the **main.py** module. **Now you must subsitute this file with your own application**
 
-## Update the generator
-
-If you have already a generator version anf you want update this on execute:
-
-```bash
-npm install -g uniovi-bokeh-template
-```
-
-## Arbol del proyecto creado
-
-Este es el arbol de carpeta y ficheros creados por el generador de yeoman. En resumen este árbol es muy semejante a cualquier
-árbol de proyectos creado por el scaffolding de Angular al que se le ha añadido nuevas configuraciones propias a cualquier proyecto en Consum.
-Estas particularidades las podemos resumir en:
-
- - Un menu mock por defecto que deberá de ser borrado al iniciar nuestro proyecto.
- - Reglas de Lint y Prettier y Html para aplicar buenas practicas y formato standard a nuestro código.
- - Reglas para anáisis estático de nuestro código por parte de SonarCloud.
- - Configuración del pipeline de Jenkins.
- - Incluye la dependencia de la última libreria de Componentes estable, con todos los componentes y paquetes de estilos de Consum.
- - Entorno de test configurado para poder empezar a desarrollar nuestra aplicación.
+## Template tree folder structure
 
 ```text
-├───src
-│    ├───app
-│    │   ├───core
-│    │   │   ├───constants
-│    │   │   │   └───menu-mock.ts ->  menu mock de prueba que podrá ser borrado tras el inicio del desarrollo del proyecto
-│    │   │   └───models
-│    │   │   │   └───environment.ts ->  fichero de configuración custom en donde podremos añadir variables de entorno si fuera necesario a nuestro proyecto
-│    │   └───pages
-│    │       └───... -> paginas mock que son accedidas por el menu mock y que pueden ser un punto de partida o simplemebte ser borradas tras el inicio del desarrollo del proyecto
-│    ├───assets\i18n -> traducciones base de nuestro proyecto
-│    │   ├───en-GB.json
-│    │   └───es-ES.json
-│    ├───centralized-config -> configuraciones de todos los servicios nginx remoto encargado de ofrecer las configuraciones de nuestro proyecto en tiempo de ejecución.
-│    │   ├───nginx-des.conf
-│    │   ├───nginx-pre.conf
-│    │   └───nginx-test.conf
-│    ├───environments -> configuracion de los entornos de nuestro proyecto. Local y producción, en este caso la configuración será recoogida en tiempo de ejecución del entorno correspondiente.
-│    │   ├───environment.prod.ts
-│    │   └───environment.ts
-│    ├───local-config
-│    │   └───environment.json: configuración local de nuestro proyecto
-│    ├───scss
-│    │   ├───styles.scss
-│    │   └───styles.test.scss
-│    ├───karma.conf.js -> configuración del entorno de test de nuestro proyecto
-│    ├───main.js -> punto de arranque o entrada de nuestro proyecto
-│    └───index.html -> index de nuestro proyecto
-├───.gitignore               -> configuración ficheros ignorados por git
-├───commitlint.config.js     -> configuración commit lint
-├───.htmlhintrc              -> configuración de html lint
-├───.prettierrc              -> configuración de prettier
-├───.stylelintrc             -> configuración de style lint
-├───.stylelintignore         -> configuración ficheros ignorados por style lint
-├───Jenkinsfile              -> configuración del pipeline jenkins
-├───karma.conf.js            -> configuración karma testing
-├───angular.json             -> configuración global de Angular
-├───package.json             -> fichero con todas las dependencia y comandos de muestro proyecto
-├───package-lock.json        -> fichero con todas las dependencia concretas utilizadas por nuestro proyecto
-├───sonar-project.properties -> configuración del proyecto de sonar asociado a nuestro proyecto
-├───README                   -> README general de nnuestro proyecto
-├───tsconfig.json            -> configuración gloabl del compilador de typecript
-├───tsconfig.spec.json       -> configuración local del compilador de typecript de nuestro proyecto
+├───auth
+│    ├──auth.py
+│    └──login.html
+├───static
+│    ├───css
+│    │   └───styles.css
+│    └───images
+│        ├──login_background.png
+│        └──login_gsdpi.png
+├───.gitignore               -> git ignore files app configuration
+├───bootstrap.py             -> application bootstrap
+├───Dockerfile               -> dockerfile to build your docker image
+├───main.py                  -> main python application module
+├───README                   -> application README file
+├───requirements.txt         -> application python dependencies
 ```

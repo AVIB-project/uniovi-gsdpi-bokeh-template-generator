@@ -1,9 +1,0 @@
-# Si la aplicación es solo para central
-last 10 edge version
-last 10 chrome version
-last 10 firefox version
-
-# Si la aplicación es para tiendas cambiar por estas versiones de navegadores
-#last 10 edge version
-#last 10 chrome version
-#firefox >= 88

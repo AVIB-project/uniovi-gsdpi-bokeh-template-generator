@@ -1,27 +1,22 @@
 {
   "name": "generator-uniovi-bokeh-template",
   "version": "1.0.0",
-  "description": "Bokeh template generator",
-  "homepage": "",
+  "description": "Bokeh basic authentication template generator",
+  "homepage": "https://gsdpi.edv.uniovi.es/webpage/dpi2015.html",
+  "keywords": ["yeoman-generator"],
   "author": {
     "name": "Miguel Salinas Gancedo",
-    "email": "UO34525@uniovi.es"
+    "email": "uo34525@uniovi.es"
   },
-  "files": [
-    "generators"
-  ],
+  "files": ["generators"],
   "main": "generators/index.js",
-  "keywords": [
-    "",
-    "yeoman-generator"
-  ],
   "type": "module",
   "devDependencies": {
     "yeoman-assert": "3.1.1",
     "yeoman-test": "8.2.0"
   },
   "engines": {
-    "npm": ">= 4.0.0"
+    "npm": ">= 10.0.0"
   },
   "dependencies": {
     "cfonts": "3.2.0",

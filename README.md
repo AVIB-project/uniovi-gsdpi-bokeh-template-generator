@@ -1,5 +1,5 @@
 # Description
-Bokeh template generator
+Bokeh basic authentication template generator 
 
 ## Install template
 

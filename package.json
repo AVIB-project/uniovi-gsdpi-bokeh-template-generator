@@ -1,6 +1,6 @@
 {
   "name": "generator-uniovi-bokeh-template",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Bokeh basic authentication template generator",
   "homepage": "https://gsdpi.edv.uniovi.es/webpage/dpi2015.html",
   "keywords": ["yeoman-generator"],

@@ -12,25 +12,25 @@ $ npm install -g yo
 Install the uniovi-bokeh-template from [npm](https://www.npmjs.com/):
 
 ```bash
-$ npm install -g uniovi-bokeh-template
+$ npm install -g generator-uniovi-bokeh-template
 ```
 
 For a particular template version:
 
 ```bash
-$ npm install -g uniovi-bokeh-template@1.0.0
+$ npm install -g generator-uniovi-bokeh-template@1.0.0
 ```
 ## Update template
 
 If you have already a template version and you want update it, execute this comm:
 
 ```bash
-npm install -g uniovi-bokeh-template
+npm install -g generator-uniovi-bokeh-template
 ```
 
 ## Generate your project from template
 
-Then you can generate yoour new project from template:
+Then you can generate your new project from template:
 
 ```bash
 $ yo uniovi-bokeh-template

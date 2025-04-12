@@ -118,7 +118,7 @@ Bohek template prompt
 ![bokeh-template-prompt](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_template_prompt.png "bokeh-template-prompt")
 
 Bokeh Login
-![bokeh-login](./images/bokeh_login.png "bokeh-login")
+![bokeh-login](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_login.png "bokeh-login")
 
 Bokeh sample application
-![bokeh-application](./images/bokeh_application.png "bokeh-application")
+![bokeh-application](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_application.png "bokeh-application")

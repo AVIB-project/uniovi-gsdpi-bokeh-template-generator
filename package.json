@@ -8,7 +8,7 @@
     "name": "Miguel Salinas Gancedo",
     "email": "uo34525@uniovi.es"
   },
-  "files": ["generators"],
+  "files": ["generators", "images"],
   "main": "generators/index.js",
   "type": "module",
   "devDependencies": {

@@ -115,10 +115,10 @@ http://localhost:9006/prefix
 
 ## An example
 Bohek template prompt
-![bokeh-template-prompt](./captures/bokeh_template_prompt.png "bokeh-template-prompt")
+![bokeh-template-prompt](./images/bokeh_template_prompt.png "bokeh-template-prompt")
 
 Bokeh Login
-![bokeh-login](./captures/bokeh_login.png "bokeh-login")
+![bokeh-login](./images/bokeh_login.png "bokeh-login")
 
 Bokeh sample application
-![bokeh-application](./captures/bokeh_application.png "bokeh-application")
+![bokeh-application](./images/bokeh_application.png "bokeh-application")

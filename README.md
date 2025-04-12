@@ -9,20 +9,15 @@ First install [Yeoman](http://yeoman.io) template manager. It is assumed that no
 $ npm install -g yo
 ```
 
-Install the uniovi-bokeh-template from [npm](https://www.npmjs.com/):
+Install the last generator-uniovi-bokeh-template npm package from [npm](https://www.npmjs.com/):
 
 ```bash
 $ npm install -g generator-uniovi-bokeh-template
 ```
 
-For a particular template version:
-
-```bash
-$ npm install -g generator-uniovi-bokeh-template@1.0.0
-```
 ## Update template
 
-If you have already a template version and you want update it, execute this command:
+If you have already has installed a bokeh generator version and you want update it, execute again this command:
 
 ```bash
 npm install -g generator-uniovi-bokeh-template

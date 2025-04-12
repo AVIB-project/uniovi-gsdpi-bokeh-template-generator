@@ -115,7 +115,7 @@ http://localhost:9006/prefix
 
 ## An example
 Bohek template prompt
-![bokeh-template-prompt](./images/bokeh_template_prompt.png "bokeh-template-prompt")
+![bokeh-template-prompt](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_template_prompt.png "bokeh-template-prompt")
 
 Bokeh Login
 ![bokeh-login](./images/bokeh_login.png "bokeh-login")

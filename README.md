@@ -53,6 +53,16 @@ Downdload default dependencies
 $ pip install -r requirements.txt
 ```
 
+If exist any problem with the python dependencies in your python environment install this tool:
+```bash
+pip install pur
+```
+
+and update your requirements your python environment. Then try again to install the dependencies
+```bash
+pur -r requirements.txt
+```
+
 Execute default template
 ```bash
 $ python3 bootstrap.py

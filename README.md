@@ -126,7 +126,7 @@ $ docker push your-account/my-app:1.0.0
 
 Open your application from your browser:
 
-http://localhost:9000/prefix
+http://localhost:9000/my-app
 
 ## Start bokeh server in production(AVISPE Server)
 

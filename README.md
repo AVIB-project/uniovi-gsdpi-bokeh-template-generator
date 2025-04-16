@@ -66,6 +66,16 @@ $ python bootstrap.py
 
 By default the generator create a basic Bokeh application to be serve by Bokeh Server. This application is implemented in the **main.py** python module. **Now you must substitute this module with your own application**
 
+## An example
+Bokeh template prompt
+![bokeh-template-prompt](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_template_prompt.png "bokeh-template-prompt")
+
+Bokeh Login
+![bokeh-login](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_login.png "bokeh-login")
+
+Bokeh sample application
+![bokeh-application](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_application.png "bokeh-application")
+
 ## Template tree folder structure
 
 ```text
@@ -93,37 +103,49 @@ After finalize your proyect you can build your docker image, run and publish it.
 Build your image:
 
 ```
-$ docker build -t uniovi-gsdpi-bokeh-my-app:1.0.0 .
+$ docker build -t my-app:1.0.0 .
 ```
 
 Start a container from your image and test:
 
 ```
-$ docker run --rm --name uniovi-gsdpi-bokeh-my-app -p 5006:5006 uniovi-gsdpi-bokeh-my-app:1.0.0
+$ docker run --rm --name my-app -p 5000:5006 my-app:1.0.0
 ```
 
 If you want publish your image, tag your docker image to be uploaded to your repository:
 
 ```
-$ docker tag uniovi-gsdpi-bokeh-my-app:1.0.0 your-account/uniovi-gsdpi-bokeh-my-app:1.0.0
+$ docker tag my-app:1.0.0 your-account/my-app:1.0.0
 ```
 
 Finally push the docker image to your repository:
 
 ```
-$ docker push your-account/uniovi-gsdpi-bokeh-my-app:1.0.0
+$ docker push your-account/my-app:1.0.0
 ```
 
 Open your application from your browser:
 
-http://localhost:9006/prefix
+http://localhost:9000/prefix
 
-## An example
-Bokeh template prompt
-![bokeh-template-prompt](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_template_prompt.png "bokeh-template-prompt")
+## Start bokeh server in production(AVISPE Server)
 
-Bokeh Login
-![bokeh-login](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_login.png "bokeh-login")
+Configure HAProxy and proxy rule to access to boker application
 
-Bokeh sample application
-![bokeh-application](https://github.com/AVIB-project/uniovi-gsdpi-bokeh-template-generator/blob/main/images/bokeh_application.png "bokeh-application")
+```
+frontend k8s-frontend
+...
+
+    # Frotend epigenomics application redirection
+    use_backend my-application if { path /my-app } || { path_beg /my-app/ }
+    
+backend my-application    
+    # redirect to bokeh applications
+    ...
+    
+    server my-app localhost:5000
+```
+
+Start Bokeh Server executing this command
+```
+$ docker run -d --name my-app -p 5000:5006 -e BOKEH_ALLOW_WS_ORIGIN=avispe.edv.uniovi.es -e BOKEH_RESOURCES=cdn my-app:1.0.0

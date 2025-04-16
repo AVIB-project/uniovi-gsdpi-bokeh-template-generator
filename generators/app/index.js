@@ -50,31 +50,31 @@ export default class extends Generator {
       {
         type: 'input',
         name: 'appTitle',
-        message: 'App title? [without blanks], By default:',
+        message: 'App title?, By default:',
         default: 'Bokeh Template',
       },       
       {
         type: 'input',
         name: 'appUsername',
-        message: 'Project username?, By default:',
+        message: 'App username?, By default:',
         default: 'username',
       },
       {
         type: 'input',
         name: 'appPassword',
-        message: 'Project password?, By default:',
+        message: 'App password?, By default:',
         default: 'password',
       }, 
       {
         type: 'input',
         name: 'appPrefix',
-        message: 'Project path prefix?, By default:',
+        message: 'App path prefix? [without blanks], By default:',
         default: 'prefix',
       },        
       {
         type: 'input',
         name: 'appPort',
-        message: 'Project port?, By default:',
+        message: 'App port?, By default:',
         default: 5006,
       },
       {

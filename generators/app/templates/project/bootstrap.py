@@ -15,7 +15,7 @@ app_title = "<%= appTitle %>"
 app_logo = "logo_gsdpi.png"
 app_background = "login_background.png"
 cookie_secret = "my super secret"
-websocket_origin = ["localhost:" + str(app_port)]
+websocket_origin = ["<%= webSocketOriginHost %>", "localhost:" + str(app_port)]
 basic_username = "<%= appUsername %>"
 basic_password = "<%= appPassword %>"
 login_level = logging.DEBUG

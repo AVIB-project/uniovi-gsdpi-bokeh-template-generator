@@ -76,6 +76,12 @@ export default class extends Generator {
         name: 'appPort',
         message: 'Project port?, By default:',
         default: 5006,
+      },
+      {
+        type: 'input',
+        name: 'webSocketOriginHost',
+        message: 'Websocket Proxy Origin host?, By default:',
+        default: 'avispe.edv.uniovi.es:80',
       },      
     ];
     
@@ -86,7 +92,8 @@ export default class extends Generator {
   }
 
   writing() {
-    console.log('Copy all files in folder');
+    console.log('Generate template Project from prompt');
+
     this.fs.copyTpl(this.templatePath('project/**'), this.destinationPath(this.props.projectName), {
       projectName: this.props.projectName,
       projectVersion: this.props.projectVersion,
@@ -95,6 +102,7 @@ export default class extends Generator {
       appPassword: this.props.appPassword,
       appPrefix: this.props.appPrefix,
       appPort: this.props.appPort,
+      webSocketOriginHost: this.props.webSocketOriginHost,
       versionBokehTemplate: this.versionBokehTemplate,
     });
   }

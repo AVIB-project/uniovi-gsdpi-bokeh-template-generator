@@ -130,7 +130,7 @@ http://localhost:9000/my-app
 
 ## Start bokeh server in production(AVISPE Server)
 
-Configure HAProxy and proxy rule to access to boker application
+Configure HAProxy and add a proxy rule to access to boker application like this:
 
 ```
 frontend k8s-frontend
@@ -140,7 +140,7 @@ frontend k8s-frontend
     use_backend my-application if { path /my-app } || { path_beg /my-app/ }
     
 backend my-application    
-    # redirect to bokeh applications
+    # redirect to bokeh applications rules
     ...
     
     server my-app localhost:5000

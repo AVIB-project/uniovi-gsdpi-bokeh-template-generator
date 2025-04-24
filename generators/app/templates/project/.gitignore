@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# template default data folder gitignore rules
+# Ignore all files in this folder
+data/*
+
+# But don't ignore .gitkeep
+!data/.gitkeep

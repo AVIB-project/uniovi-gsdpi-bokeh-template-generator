@@ -12,7 +12,16 @@ basic_password = ""
 
 # could define get_user_async instead
 def get_user(request_handler):
-    return request_handler.get_signed_cookie("user")
+    signed_cookie = request_handler.get_signed_cookie(prefix)
+
+    if signed_cookie is not None:
+        cookie_username = tornado.escape.json_decode(signed_cookie)
+
+        if (basic_username != cookie_username):
+            request_handler.clear_cookie(prefix)
+            request_handler.redirect("/" + prefix)
+    
+    return signed_cookie
 
 # could also define get_login_url function (but must give up LoginHandler)
 login_url = "/login"
@@ -55,9 +64,9 @@ class LoginHandler(RequestHandler):
 
     def set_current_user(self, user):
         if user:
-            self.set_signed_cookie("user", tornado.escape.json_encode(user))
+            self.set_signed_cookie(prefix, tornado.escape.json_encode(user))
         else:
-            self.clear_cookie("user")
+            self.clear_cookie(prefix)
 
 # optional logout_url, available as curdoc().session_context.logout_url
 logout_url = "/logout"
@@ -65,5 +74,5 @@ logout_url = "/logout"
 # optional logout handler for logout_url
 class LogoutHandler(RequestHandler):
     def get(self):
-        self.clear_cookie("user")
+        self.clear_cookie(prefix)
         self.redirect("/" + prefix)
